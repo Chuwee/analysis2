@@ -1,35 +1,54 @@
 \begin{enumerate}
-		      \item To describe $\Omega$ we first recall $\Log(z) =
-			            \ln|z|
-			            + i\Arg(z)$. Since $|z| < 1$ we have
-		            $\ln|z| < 0$
-		            and since $\Arg(z) \in
-			            (-\pi/2, \pi/2)$. The logarithm $\ln|z|$
-		            can take
-		            any value in $(-\infty, 0)$, therefore we're
-		            looking at
-		            numbers of the form $x + iy$ where $x < 0$ and $y
-			            \in
-			            (-\pi/2, \pi/2)$.
-		            \begin{equation*}
-			            f(\Omega) = \{z \in \mathbb{C} : z = x +
-			            iy, x <
-			            0, y \in (-\pi/2, \pi/2)\}
-		            \end{equation*}
-		      \item Similarly, we have $|z| > 1$ so $\ln|z| > 0$ and
-		            $\Arg(z) \in [0, \pi]$. The logarithm $\ln|z|$ can
-		            take any value in $(0, \infty)$, therefore we're
-		            looking at numbers of the form $x + iy$ where $x >
-			            0$
-		            and
-		            $y \in [0, \pi]$.
-		            \begin{equation*}
-			            f(\Omega) = \{z \in \mathbb{C} : z = x +
-			            iy, x >
-			            0, y \in [0, \pi]\}
-		            \end{equation*}
+	\item To describe $\Omega$ we first recall $\Log(z) =
+		      \ln|z|
+		      + i\Arg(z)$. Since $|z| < 1$ we have
+	      $\ln|z| < 0$
+	      and since $\Arg(z) \in
+		      (-\pi/2, \pi/2)$. The logarithm $\ln|z|$
+	      can take
+	      any value in $(-\infty, 0)$, therefore we're
+	      looking at
+	      numbers of the form $x + iy$ where $x < 0$ and $y
+		      \in
+		      (-\pi/2, \pi/2)$.
+	      \begin{equation*}
+		      f(\Omega) = \{z \in \mathbb{C} : z = x +
+		      iy, x <
+		      0, y \in (-\pi/2, \pi/2)\}
+	      \end{equation*}
+	\item Similarly, we have $|z| > 1$ so $\ln|z| > 0$ and
+	      $\Arg(z) \in [0, \pi]$. The logarithm $\ln|z|$ can
+	      take any value in $(0, \infty)$, therefore we're
+	      looking at numbers of the form $x + iy$ where $x >
+		      0$
+	      and
+	      $y \in [0, \pi]$.
+	      \begin{equation*}
+		      f(\Omega) = \{z \in \mathbb{C} : z = x +
+		      iy, x >
+		      0, y \in [0, \pi]\}
+	      \end{equation*}
 
-		      \item We're asked to find the branch cut of the function
-		            $f(z)$
+	\item We're asked to find the branch cut of the function
+	      $f(z)$. This means we must find where $\Arg(\Log\frac{z-i}{z+i})$
+	      jumps from $-\pi$ to $\pi$. Arguing by the definition of the
+	      logarithm, this means $\Arg(\ln|\frac{z-i}{z+i}| +
+		      i\Arg(\frac{z-i}{z+i}))$ must jump from
+	      $-\pi$ to $\pi$
 
-	      \end{enumerate}
+	      For $\Arg(\ln|\frac{z-i}{z+i}| + i\Arg(\frac{z-i}{z+i}))$ to be
+	      $-\pi$ or $\pi$, there
+	      must be no imaginary part, so $\Arg(\frac{z-i}{z+i}) = 0$, which
+	      means $\frac{z-i}{z+i}$ is
+	      real. This then means that the fraction cancels out as a real
+	      number, so $z$ must be purely imaginary (otherwise we're met with
+	      $\frac{\Re(z)
+			      + \Im(z) - i + i + i}{\Re(z) + \Im(z) - i} = 1 +
+		      \frac{2i}{\Re(z) + \Im(z) -
+			      i}$ which can't be real if $\Re(z) \neq 0$)
+	      Let $z = yi$, then we're looking at points of the form
+	      $\frac{yi-i}{yi+i} = \frac{y -1}{y+1}$. For this to be negative
+	      (to be in the negative real axis), we have $-1 < y < 1$. Thus, the branch cut
+	      is the imaginary axis from $-i$ to $i$ exclusive.
+
+\end{enumerate}

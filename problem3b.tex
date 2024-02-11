@@ -1,0 +1,28 @@
+Similarly, we're asked for the same integral, but this time along the curve
+$\gamma$ given by $\{|z - 2i| = 1/2\}$.
+
+\begin{align*}
+    \oint_{\gamma}\left(\frac{3}{z+2}-\frac{1}{z-2i}\right)dz & =
+    \oint_{\gamma}\frac{3}{z+2}dz - \oint_{\gamma}\frac{1}{z-2i}dz
+\end{align*}
+
+If we call $f_1(z) = 3/(z+2)$ and $f_2(z) = 1/(z-2i)$, we know that $f_1(z)$ is
+holomorphic in the disc $|z - 2i| \leq 1/2$. Thus, by the Cauchy-Goursat
+theorem for discs:
+
+\begin{align*}
+    \oint_{\gamma}\frac{3}{z+2}dz & = 0
+\end{align*}
+
+This leaves the second integral as the only one to evaluate. Proceeding with
+Cauchy's formula as before:
+
+\begin{align*}
+    \oint_{\gamma}\frac{1}{z-2i}dz & = 2\pi i
+\end{align*}
+
+So, this leaves
+
+\begin{align*}
+    \oint_{\gamma}\left(\frac{3}{z+2}-\frac{1}{z-2i}\right)dz & = 0 - 2\pi i = -2\pi i
+\end{align*}

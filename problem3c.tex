@@ -1,0 +1,34 @@
+Take the figure eight curve. We can split it into two curves cutting by the
+intersection point, and then consider both curves separately. Traversing one of
+the curves in any direction means we traverse the other in opposite direction.
+By the deformation theorem, this reduces to calculating the integral caused by
+the singularities at the interiors of both curves. Let's call the function
+we're integrating $f(z)$. We can write the integral as
+
+\[ \oint_\gamma \frac{{8z - 3}}{{z^2 - z}}  dz = \oint_\gamma f(z) dz\]
+
+For the region on the left, denoted as $\gamma_1$, we can express $f(z)$ as:
+
+\[ f(z) = \frac{{8z - 3}}{{z^2 - z}} = \frac{\frac{8z - 3}{z-1}}{{z}}\]
+
+If we call $g_1(z) = \frac{8z - 3}{z-1}$, we can see that $g(z)$ is holomorphic
+in the left region because it's the division of two entire functions and the
+denominator is not 0 in this region. Thus, we can apply the Cauchy formula once
+again.
+
+\begin{align*}
+    2\pi ig_1(z_0) & = \oint_{\gamma_1}\frac{g_1(z)}{z-z_0}dz
+\end{align*}
+
+Since $g_1(0) = 3$, $\oint_{\gamma_1}\frac{g(z)}{z-z_0}dz = 6\pi i$.
+
+By a similar argument, call the right region $\gamma_2$ and $g_2(z) = \frac{8z
+        - 3}{z}$, and we can see that $g(1) = 5$, so
+$\oint_{\gamma_2}\frac{g(z)}{z-z_0}dz = 10\pi i$. Since we traverse the left
+curve in the positive direction and the right curve in the negative direction,
+we can add the two integrals together to get the value of the original
+integral:
+
+\begin{align*}
+    \oint_\gamma \frac{{8z - 3}}{{z^2 - z}}  dz & = 6\pi i - 10\pi i = -4\pi i
+\end{align*}

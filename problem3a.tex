@@ -1,0 +1,34 @@
+We are asked to find the value of the integral
+$\oint_{\gamma}\left(\frac{3}{z+2}-\frac{1}{z-2i}\right)dz$ along the curve
+$\gamma$ given by $\{|z|=5\}$. We can split the integral into two parts:
+
+\begin{align*}
+    \oint_{\gamma}\left(\frac{3}{z+2}-\frac{1}{z-2i}\right)dz & =
+    \oint_{\gamma}\frac{3}{z+2}dz - \oint_{\gamma}\frac{1}{z-2i}dz
+\end{align*}
+
+And evaluate them separately. Since $2i$ and $-2$ are inside the curve
+$\gamma$, and $f(z) = c$ is entire for any constant $c$, we can use Cauchy's
+integral formula to evaluate the integrals. Recall Cauchy's integral formula:
+
+\begin{align*}
+    f(z_0) & = \frac{1}{2\pi i}\oint_{\gamma}\frac{f(z)}{z-z_0}dz
+\end{align*}
+
+Which gives us the value of the integral as $2\pi i f(z_0)$. We can rewrite the integral as
+
+\begin{align*}
+    \oint_{\gamma}\frac{3}{z+2}dz & = 3\oint_{\gamma}\frac{1}{z+2}dz = 3\cdot 2\pi i = 6\pi i
+\end{align*}
+
+The same goes for the second integral:
+
+\begin{align*}
+    \oint_{\gamma}\frac{1}{z-2i}dz & = 2\pi i
+\end{align*}
+
+And now, we can add them together to get the value of the original integral:
+
+\begin{align*}
+    \oint_{\gamma}\left(\frac{3}{z+2}-\frac{1}{z-2i}\right)dz & = 6\pi i - 2\pi i = 4\pi i
+\end{align*}
