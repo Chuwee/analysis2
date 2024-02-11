@@ -1,0 +1,67 @@
+Let's find Taylor series for $f =
+	\frac{1}{(z+i)(z-2)}$. First, recall
+
+\begin{equation}\label{eq:taylor}
+	f_{z_0}(z) = \sum_{n=0}^{\infty}
+	\frac{f^{(n)}(z_0)}{n!} (z-z_0)^n
+\end{equation}
+
+We're asked to set $z_0 = 1$. Notice that since
+$(z+i)(z-2)$ is entire, $1$ is entire and the
+denominator is not 0 at $z_0 = 1$
+and thus $f$ is holomorphic at $z_0 = 1$.
+
+We can already see that the derivatives will be too
+complicated to compute. Let's try to simplify the
+function first. We can use
+partial fractions to write $f$ as a sum of two
+simpler functions:
+
+\begin{equation}
+	f(z) = \frac{1}{(z+i)(z-2)} = \frac{A}{z+i}
+	+ \frac{B}{z-2}
+\end{equation}
+
+Multiplying both sides by $(z+i)(z-2)$
+we get $1 = A(z-2) + B(z+i)$. We can solve for $A$
+and $B$ by setting $z = -i$
+and $z = 2$:
+
+And so, $1 = (-i-2)A$ and $1 = (2+i)B$. Solving we get $A = \frac{1}{-i-2}$
+and $B = \frac{1}{i+2}$. Now, the simplification leads to:
+
+\begin{align*}
+	 & B = \frac{1}{i+2}\frac{i-2}{i-2} = \frac{i-2}{-5} = \frac{2}{5} - \frac{i}{5}      \\
+	 & A = \frac{1}{-i-2}\frac{-i+2}{-i+2} = \frac{-i+2}{-5} = \frac{-2}{5} + \frac{i}{5}
+\end{align*}
+
+Let $\kappa = -\frac{2}{5} + \frac{i}{5}$. Then we have:
+
+\begin{equation}
+	f(z) = \frac{1}{(z+i)(z-2)} = \kappa\left(\frac{1}{z+i} - \frac{1}{z-2}\right)
+\end{equation}
+
+And now, calculating derivatives becomes much easier:
+
+\begin{align*}
+	 & f'(z)   = \kappa\left(-\frac{1}{(z+i)^2} + \frac{1}{(z-2)^2}\right)                        \\
+	 & f''(z)  = \kappa\left(\frac{2}{(z+i)^3} - \frac{2}{(z-2)^3}\right)                         \\
+	 & f'''(z) = \kappa\left(-\frac{6}{(z+i)^4} + \frac{6}{(z-2)^4}\right)                        \\
+	 & \cdots                                                                                     \\
+	 & f^{(n)}(z) = (-1)^{n} \kappa n! \left(\frac{1}{(z+i)^{n+1}} - \frac{1}{(z-2)^{n+1}}\right)
+\end{align*}
+
+And, applying this to $z_0 = 1$, we get:
+
+\begin{equation}\label{eq:derivative_for_n}
+    f^{(n)}(1) =  \kappa n! \left(\frac{(-1)^{n}}{(1+i)^{n+1}} + 1\right)
+\end{equation}
+
+Now, plugging~\eqref{eq:derivative_for_n} into~\eqref{eq:taylor} we get:
+
+\begin{equation}\label{eq:taylor_series}
+	f_{z_0}(z) = \kappa \sum_{n=0}^{\infty}
+	\left(\frac{(-1)^{n}}{(1+i)^{n+1}} + 1\right) (z-1)^n
+\end{equation}
+
+Where $\kappa = -\frac{2}{5} + \frac{i}{5}$.

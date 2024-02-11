@@ -1,0 +1,152 @@
+Since $f$ is entire, we can consider its MacLaurin series:
+	      \begin{equation*}
+		      f(z) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} z^n =
+		      a_0 +
+		      a_1z +
+		      a_2z^2 + \ldots
+	      \end{equation*}
+	      Where $a_i$ is the complex coefficient of $z^i$ in the MacLaurin
+	      expansion. Assume $a_i \neq 0$ for $i \geq 2$, then $|f(z)| = a_0
+		      +
+		      a_1z +
+		      a_2z^2 + \ldots$, so the limit becomes
+
+	      \begin{equation*}
+		      \lim_{|z| \to \infty}\frac{|f(z)|}{|z|^2} = \lim_{|z| \to
+			      \infty}\frac{|a_0 + a_1z +
+			      a_2z^2 + \ldots|}{|z|^2} = \lim_{|z| \to
+			      \infty}\left|\frac{a_0 + a_1z +
+			      a_2z^2 + \ldots}{z^2}\right|
+	      \end{equation*}
+
+	      Applying the division, we get:
+
+	      \begin{equation*}
+		      \lim_{|z| \to \infty}\left|\frac{a_0 + a_1z +
+			      a_2z^2 + \ldots}{z^2}\right| = \lim_{|z| \to
+			      \infty}\left|\frac{a_0}{z^2} + \frac{a_1}{z} +
+		      a_2 + \ldots\right| = 0
+	      \end{equation*}
+
+	      This is true if and only if the complex number tends to 0, so we
+	      have:
+
+	      \begin{equation*}
+		      \lim_{|z| \to \infty}\frac{a_0}{z^2} + \frac{a_1}{z} +
+		      a_2 + \cdots = 0
+	      \end{equation*}
+
+	      And since the limit of the sum is the sum of the limits:
+
+	      \begin{equation*}
+		      \lim_{|z| \to \infty}\frac{a_0}{z^2} + \lim_{|z| \to
+			      \infty}\frac{a_1}{z} +
+		      \lim_{|z| \to \infty}a_2 + \cdots = 0
+	      \end{equation*}
+
+	      And we know that $\lim_{|z| \to
+			      \infty}\left|\frac{a_0}{z^2}\right|
+		      = 0$ and $\lim_{|z| \to \infty}\left|\frac{a_1}{z}\right|
+		      =
+		      0$, because $a_0$
+	      and $a_1$ are constants. Once again, since the modulus is 0, the
+	      number must be 0, so the limit becomes:
+
+	      \begin{equation*}
+		      \lim_{|z| \to \infty}a_2 + \lim_{|z| \to \infty}a_3z +
+		      \cdots
+		      = a_2 + \lim_{|z| \to \infty}\sum_{n=3}^{\infty}a_n
+		      z^{n-2} =
+		      0
+	      \end{equation*}
+
+	      So the limit of the sum is $-a_2$, like so:
+
+	      \begin{equation*}
+		      \lim_{|z| \to \infty}\sum_{n=3}^{\infty}a_n z^{n-2} =
+		      -a_2
+	      \end{equation*}
+
+	      Taking the modulus of both sides, we get:
+
+	      \begin{equation*}
+		      \lim_{|z| \to \infty}\left|\sum_{n=3}^{\infty}a_n
+		      z^{n-2}\right|
+		      = |-a_2| = |a_2|
+	      \end{equation*}
+
+	      Since the LHS doesn't have singularities, and the limit is
+	      finite,
+	      we can bound the sum by a constant $M$:
+
+	      \begin{equation*}
+		      \left|\sum_{n=3}^{\infty}a_n z^{n-2}\right| \leq M
+	      \end{equation*}
+
+	      But, by Liouville's theorem ($*$), if $s(z) =
+		      \sum_{n=3}^{\infty}a_n
+		      z^{n-2}$ is
+	      bounded, then it is constant. Since the
+	      limit is $-a_2$, then
+
+	      \begin{equation*}
+		      s(z) = \sum_{n=3}^{\infty}a_n z^{n-2} = -a_2
+	      \end{equation*}
+
+	      But since $s(0) = 0$, then $-a_2 = 0$, so $a_2 = 0$, and $s(z) =
+		      \sum_{n=3}^{\infty}a_n z^{n-2} = 0$
+
+	      Going back to the Maclaurin expansion of $f$, we have:
+
+	      \begin{equation*}
+		      f(z) = a_0 + a_1z + a_2z^2 + z^2\sum_{n=3}^{\infty}a_n
+		      z^{n-2} = a_0 + a_1z
+	      \end{equation*}
+
+	      If we rename $a_0 = a$ and $a_1 = b$, we get the final result:
+
+	      \begin{align*}
+		      f(z) = a + bz \\ a, b \in \mathbb{C}
+	      \end{align*}
+
+	      ($*$) Here we need to be careful as $s(z)$
+	      was obtained by $\frac{f(z)-a_2z^2-a_1z-a_0}{z^2}$, so we would
+	      really be
+	      talking about a function which takes this fraction in $\C -
+		      \{0\}$
+	      and $0$
+	      if $z = 0$, and this function is holomorphic at $\C - \{0\}$, but
+	      we need to check that it is also holomorphic at $0$ to make sure
+	      that we can apply the
+	      theorem. Following the actual piecewise definition of $s(z)$
+
+	      \begin{equation*}
+		      s(z) = \begin{cases}
+			      \frac{f(z)-a_2z^2-a_1z-a_0}{z^2} & \text{if } z
+			      \neq 0
+			      \\
+			      0                                & \text{if } z =
+			      0
+		      \end{cases}
+	      \end{equation*}
+
+	      To check whether $s(z)$ is holomorphic at $0$, we need to check
+	      if
+
+	      \begin{equation*}
+		      \lim_{h \to 0}\frac{s(h) - s(0)}{h-0} = \lim_{h \to
+			      0}\frac{s(h)}{h}
+	      \end{equation*}
+
+	      converges.
+	      Note $f(h) - a_2h^2 - a_1h - a_0 = h^2\sum_{n=3}^\infty a_n
+		      h^{n-2}$, so
+
+	      \begin{equation*}
+		      \lim_{h \to 0}\frac{s(h)}{h} = \lim_{h \to
+			      0}\frac{h^2\sum_{n=3}^\infty a_n h^{n-2}}{h^2} =
+		      \lim_{h \to
+			      0}\sum_{n=3}^\infty a_n h^{n-3} = a_3
+	      \end{equation*}
+
+	      So $s(z)$ is holomorphic at $0$, and thus it is entire.
